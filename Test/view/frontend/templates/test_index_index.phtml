@@ -1,0 +1,29 @@
+
+<style>
+table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+tr:nth-child(even) { background-color: #dddddd; }
+.post-id{width:2%} .post-last{width:30%} .post-first{width:30%} .post-product{width:30%} .post-qty{width:30%}
+
+</style>
+
+<table>
+  <tr>
+    <th class="post-id">Order Id</th>
+    <th class="post-last">Last Name</th>
+    <th class="post-first">First Name</th>
+    <th class="post-product">Product Name</th>
+    <th class="post-qty">Product Qty</th>
+  </tr>
+    <?php
+        foreach ($block->getTestCollection() as $key=>$post){
+            echo '<tr>
+                    <td>'.$post->getOrderId().'</td>
+                    <td>'.$post->getLastName().'</td>
+                    <td>'.$post->getFirstName().'</td>
+                    <td>'.$post->getProductName().'</td>
+                    <td>'.$post->getQty().'</td>
+                  </tr>';
+        }
+    ?>
+</table>
